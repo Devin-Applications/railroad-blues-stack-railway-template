@@ -42,7 +42,7 @@ export default function NewVendorPage() {
             type="text"
             name="name"
             aria-invalid={actionData?.errors?.name ? true : undefined}
-            aria-describedby="name-error"
+            aria-describedby={actionData?.errors?.name ? "name-error" : undefined}
           />
         </label>
         {actionData?.errors?.name && (
