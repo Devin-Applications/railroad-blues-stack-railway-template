@@ -13,6 +13,7 @@ interface ActionData {
 }
 
 export const action = async ({ request }: ActionFunctionArgs) => {
+  console.log("Action function for /vendors/new route called");
   await requireUserId(request);
   const formData = await request.formData();
   const name = formData.get("name");
@@ -31,6 +32,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 };
 
 export default function NewVendorPage() {
+  console.log("NewVendorPage component rendered");
   const actionData = useActionData() as ActionData;
 
   return (
