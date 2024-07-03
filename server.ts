@@ -100,12 +100,6 @@ async function run() {
     }
   });
 
-  const metricsPort = process.env.METRICS_PORT || 3010;
-
-  metricsApp.listen(metricsPort, () => {
-    console.log(`✅ metrics ready: http://localhost:${metricsPort}/metrics`);
-  });
-
   async function reimportServer(): Promise<ServerBuild> {
     // cjs: manually remove the server build from the require cache
     Object.keys(require.cache).forEach((key) => {
