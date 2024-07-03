@@ -50,7 +50,7 @@ Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --
 
   > **Note:** The npm script will complete while Docker sets up the container in the background. Ensure that Docker has finished and your container is running before proceeding.
 
-- Initial setup:  
+- Initial setup:
   _only run this the first time_
 
   ```sh
@@ -72,11 +72,11 @@ The database seed script creates a new user with some data you can use to get st
 
 ### Relevant code:
 
-This is a pretty simple note-taking app, but it's a good example of how you can build a full stack app with Prisma and Remix. The main functionality is creating users, logging in and out, and creating and deleting notes.
+This is a vendor management system that demonstrates how to build a full stack app with Prisma and Remix. The main functionality includes creating users, logging in and out, and managing vendors.
 
 - creating users, and logging in and out [./app/models/user.server.ts](./app/models/user.server.ts)
 - user sessions, and verifying them [./app/session.server.ts](./app/session.server.ts)
-- creating, and deleting notes [./app/models/note.server.ts](./app/models/note.server.ts)
+- managing vendors [./app/models/vendor.server.ts](./app/models/vendor.server.ts)
 
 ## TODO: Preview Deployments
 

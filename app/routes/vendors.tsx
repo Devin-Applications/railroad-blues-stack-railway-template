@@ -1,10 +1,13 @@
+import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
 import { getVendorListItems } from "~/models/vendor.server";
+import { requireUserId } from "~/session.server";
 import { useUser } from "~/utils";
 
-export const loader = async () => {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  await requireUserId(request);
   const vendorListItems = await getVendorListItems();
   return json({ vendorListItems });
 };
