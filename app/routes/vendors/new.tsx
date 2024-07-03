@@ -19,7 +19,10 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const name = formData.get("name");
   const isActive = formData.get("isActive") === "true";
 
+  console.log("Form data received:", { name, isActive });
+
   if (typeof name !== "string" || name.length === 0) {
+    console.log("Validation error: Name is required");
     return json<ActionData>(
       { errors: { name: "Name is required" } },
       { status: 400 }
@@ -27,6 +30,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   }
 
   await createVendor({ name, isActive });
+
+  console.log("Vendor created successfully");
 
   return redirect("/vendors");
 };
