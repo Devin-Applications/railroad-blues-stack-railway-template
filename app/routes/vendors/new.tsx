@@ -37,11 +37,31 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 };
 
 export default function NewVendorPage() {
-  console.log("NewVendorPage component rendered");
+  const actionData = useActionData<ActionData>();
 
   return (
     <div>
-      <h1>Hello, Vendor!</h1>
+      <h1>Add a New Vendor</h1>
+      <Form method="post">
+        <div>
+          <label>
+            Vendor Name:{" "}
+            <input type="text" name="name" />
+          </label>
+          {actionData?.errors?.name && (
+            <p style={{ color: "red" }}>{actionData.errors.name}</p>
+          )}
+        </div>
+        <div>
+          <label>
+            Active:{" "}
+            <input type="checkbox" name="isActive" value="true" />
+          </label>
+        </div>
+        <div>
+          <button type="submit">Save</button>
+        </div>
+      </Form>
     </div>
   );
 }
