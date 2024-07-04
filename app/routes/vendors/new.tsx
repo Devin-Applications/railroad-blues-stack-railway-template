@@ -38,39 +38,10 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function NewVendorPage() {
   console.log("NewVendorPage component rendered");
-  const actionData = useActionData() as ActionData;
 
   return (
-    <Form method="post">
-      <div>
-        <label>
-          Vendor Name:{" "}
-          <input
-            type="text"
-            name="name"
-            aria-invalid={actionData?.errors?.name ? true : undefined}
-            aria-describedby={actionData?.errors?.name ? "name-error" : undefined}
-          />
-        </label>
-        {actionData?.errors?.name && (
-          <p className="form-validation-error" role="alert" id="name-error">
-            {actionData.errors.name}
-          </p>
-        )}
-      </div>
-
-      <div>
-        <label>
-          Active:{" "}
-          <input type="checkbox" name="isActive" defaultChecked />
-        </label>
-      </div>
-
-      <div>
-        <button type="submit">
-          Add Vendor
-        </button>
-      </div>
-    </Form>
+    <div>
+      <h1>Hello, Vendor!</h1>
+    </div>
   );
 }
