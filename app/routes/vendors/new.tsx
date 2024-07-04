@@ -37,6 +37,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 };
 
 export default function NewVendorPage() {
+  console.log("NewVendorPage component rendered");
   const actionData = useActionData<ActionData>();
 
   return (
