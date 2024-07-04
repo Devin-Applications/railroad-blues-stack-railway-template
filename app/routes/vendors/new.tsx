@@ -3,7 +3,7 @@ import { json, redirect } from "@remix-run/node";
 import { Form, useActionData } from "@remix-run/react";
 
 import { createVendor } from "~/models/vendor.server";
-import { requireUserId } from "~/session.server";
+// import { requireUserId } from "~/session.server";
 
 interface ActionData {
   errors?: {
@@ -14,7 +14,7 @@ interface ActionData {
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   console.log("Action function for /vendors/new route called");
-  await requireUserId(request);
+  // await requireUserId(request);
   const formData = await request.formData();
   const name = formData.get("name");
   const isActive = formData.get("isActive") === "true";
