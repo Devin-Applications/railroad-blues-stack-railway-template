@@ -15,6 +15,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   password Password?
+  notes    Note[]
 }
 
 model Password {
